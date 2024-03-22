@@ -311,12 +311,12 @@ def main():
         if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE and start and end:
           length, path = Astar(lambda: draw(WINDOW, grid, rows, WIDTH), start, end, grid)
           if length == float('inf'):
-            print("Nie znaleziono ścieżki")
-            pygame.display.set_caption("Nie znaleziono ścieżki")
+            print("No path found")
+            pygame.display.set_caption("No path found")
             break
-          print("Najkrótsza ścieżka ma długość: ", "{:.2f}".format(length))
-          print("Ścieżka: ", path)
-          pygame.display.set_caption("Najkrótsza ścieżka ma długość: {:.2f}".format(length))
+          print("Shortest path is: ", "{:.2f}".format(length))
+          print("Path: ", path)
+          pygame.display.set_caption("Shortest path is: {:.2f}".format(length))
     pygame.quit()
 if __name__ == '__main__':
   main()
